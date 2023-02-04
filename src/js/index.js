@@ -6,7 +6,19 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+
+import Counter from "./component/Counter";
+
+let initialInterval = 10;
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+setInterval(() => {
+  ReactDOM.render(
+    <Counter initialValue={initialInterval}></Counter>,
+    document.querySelector("#app")
+  );
+  initialInterval++;
+}, 1000);
+
+
+
